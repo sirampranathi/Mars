@@ -135,6 +135,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Feature\login.feature" />
+    <None Include="Feature\Singup.feature" />
     <None Include="packages.config" />
     <None Include="Feature\Profilesteps.feature" />
   </ItemGroup>

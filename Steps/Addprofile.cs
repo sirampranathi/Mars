@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
 using TechTalk.SpecFlow;
@@ -33,16 +35,24 @@ namespace Mars
     Driver.Mdriver.FindElement(By.XPath("//input[@name='name']")).SendKeys("English");
             
     //Add level
-    Driver.Mdriver.FindElement(By.XPath("//select[@class='ui dropdown']")).Click();
-    Driver.Mdriver.FindElement(By.XPath("//select[@class='ui dropdown']/option[text()='Fluent']")).Click();
-   }
+            Driver.Mdriver.FindElement(By.XPath("//select[@class='ui dropdown']")).Click();
+            IWebElement levelElement = Driver.Mdriver.FindElement(By.XPath("//select[@name='level']"));
+            SelectElement levelValue = new SelectElement(levelElement);
+            levelValue.SelectByValue("Basic");
 
-    [Then(@"Click Add button")]
+        }
+
+        [Then(@"Click Add button")]
     public static void ThenClickAddButton()
   {
      //click add 
-    Driver.Mdriver.FindElement(By.XPath("//input[@value='Add']")).Click();
-
+            Driver.Mdriver.FindElement(By.XPath("//input[@value='Add']")).Click();
+            Thread.Sleep(1000);
+    //Validation
+            String language1 = Driver.Mdriver.FindElement(By.XPath("//table[1]/tbody/tr/td[1]")).Text;
+            String actualText = Driver.Mdriver.FindElement(By.XPath("//div[@class='ns-box ns-growl ns-effect-jelly ns-type-success ns-show']/div")).Text;
+            String expectedText = language1 + " has been added to your languages";
+            Assert.AreEqual(expectedText, actualText);
         }
     }
 }

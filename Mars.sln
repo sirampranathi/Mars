@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mars", "Mars\Mars.csproj", "{B0CCB1A0-8846-4C71-BE5E-9586F7CDAD90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mars", "Mars.csproj", "{B0CCB1A0-8846-4C71-BE5E-9586F7CDAD90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7F144C23-9B81-4949-9CC4-A035D7631D5D}
+		SolutionGuid = {F60A6B02-DA19-45AA-A472-96F4857A2798}
 	EndGlobalSection
 EndGlobal

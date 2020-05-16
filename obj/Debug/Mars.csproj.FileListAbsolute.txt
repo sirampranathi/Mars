@@ -35,3 +35,4 @@ D:\Mars\Mars\obj\Debug\Mars.csproj.CoreCompileInputs.cache
 D:\Mars\Mars\obj\Debug\Mars.csproj.CopyComplete
 D:\Mars\Mars\obj\Debug\Mars.exe
 D:\Mars\Mars\obj\Debug\Mars.pdb
+D:\Mars\Mars\obj\Debug\Mars.csprojAssemblyReference.cache

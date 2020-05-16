@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Threading;
 using TechTalk.SpecFlow;
@@ -22,7 +23,12 @@ namespace Mars
         [Then(@"Pop up displayed")]
         public static void ThenPopUpDisplayed()
         {
-            Console.WriteLine(" Language has been deleted");
+          
+            //Validation
+            String language1 = Driver.Mdriver.FindElement(By.XPath("//table[1]/tbody/tr/td[1]")).Text;
+            String actualText = Driver.Mdriver.FindElement(By.XPath("//div[@class='ns-box ns-growl ns-effect-jelly ns-type-success ns-show']/div")).Text;
+            String expectedText = language1 + " has been deleted from your languages";
+            Assert.AreEqual(expectedText, actualText);
         }
     }
 }

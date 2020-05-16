@@ -19,7 +19,7 @@ Scenario: Add Language deatails
 	Given Click on Delete button
 	Then Pop up displayed
 
-	Scenario: Add Skill deatils
+	#Scenario: Add Skill deatils
 	Given Select Skills Tab
 	And Click on Addnew button
 	When Enter new skills and Level
@@ -28,7 +28,7 @@ Scenario: Add Language deatails
 	Then Adding action is cancelled
 
 
-	Scenario: Edit Skill details
+	#Scenario: Edit Skill details
 	Given Click Edit button to update existing skills
 	When Update existing record
 	Then Click Update and existing record is updated
@@ -36,20 +36,20 @@ Scenario: Add Language deatails
 	Then Update action  cancelled
 
 
-	Scenario: Delete Skill details
+	#Scenario: Delete Skill details
 	Given Click on Delete icon
 	Then Displayed "skill is deleted" massage
 	When click on Cancel button
 	Then Deleting action is cancelled
 
 
-	Scenario: Add Education deatils
+	#Scenario: Add Education deatils
 	Given Select education Tab
 	And  Click on Addnew button
 	When Enter new education details for all the fields
 	Then Click Add button to add the details
 
-	Scenario: Edit Education details
+	#Scenario: Edit Education details
 	Given Click Edit button to update existing education details
 	When Update existing record
 	Then Click on Update button 
@@ -57,7 +57,7 @@ Scenario: Add Language deatails
 	Then Updation is  cancelled
 
 
-	Scenario: Delete Education details
+	#Scenario: Delete Education details
 	Given Click on Delete icon
 	Then Displayed delete massage
 	When click on Cancel button
@@ -65,13 +65,13 @@ Scenario: Add Language deatails
 
 
 
-	Scenario: Add certification deatils
+	#Scenario: Add certification deatils
 	Given Select certification Tab
 	And Click on Addnew button
 	When Enter new certification deatils and select year
 	Then Click Add button to add certification deatils
 
-	Scenario: Edit certification details
+	#Scenario: Edit certification details
 	Given Click Edit button to update existing certification deatils
 	When Update existing record
 	Then Click Update button to save
@@ -80,7 +80,7 @@ Scenario: Add Language deatails
 
 
 
-	Scenario: Delete certification details
+	#Scenario: Delete certification details
 	Given Click on Delete icon
 	Then Displayed delete massage
 	When click on Cancel button

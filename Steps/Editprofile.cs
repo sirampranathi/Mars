@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
 using TechTalk.SpecFlow;
@@ -21,11 +23,15 @@ namespace Mars
         [When(@"Update current record")]
         public static void WhenUpdateCurrentRecord()
         {
-            //select language to be edited
+            //edit language 
             Driver.Mdriver.FindElement(By.XPath("//input[@type='text' and @placeholder='Add Language']")).Clear();
             Driver.Mdriver.FindElement(By.XPath("//input[@type='text' and @placeholder='Add Language']")).SendKeys("French");
+            
+            //edit level
             Driver.Mdriver.FindElement(By.XPath("//select[@class='ui dropdown']")).Click();
-            Driver.Mdriver.FindElement(By.XPath("//select[@class='ui dropdown']/option[text()='Basic']")).Click();
+            IWebElement levelElement = Driver.Mdriver.FindElement(By.XPath("//select[@name='level']"));
+            SelectElement levelValue = new SelectElement(levelElement);
+            levelValue.SelectByValue("Basic");
 
         }
 
@@ -34,7 +40,18 @@ namespace Mars
         public static void ThenClickUpdateButton()
         {
             Driver.Mdriver.FindElement(By.XPath("//input[@value='Update']")).Click();
-            Console.WriteLine("Language has been updated");
+
+
+            //Validation
+            Thread.Sleep(1000);
+            String language1 = Driver.Mdriver.FindElement(By.XPath("//table[1]/tbody/tr/td[1]")).Text;
+            String actualText = Driver.Mdriver.FindElement(By.XPath("//div[@class='ns-box ns-growl ns-effect-jelly ns-type-success ns-show']/div")).Text;
+            String expectedText = language1+" has been updated to your languages";
+            Assert.AreEqual(expectedText, actualText);
+            
+
         }
+
+
     }
 }
